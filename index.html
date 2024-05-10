@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Addition</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #result {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+</style>
 </head>
 <body>
-    <header>
-        
-    </header>
-    
+<h2>Addition Calculator</h2>
+<form id="addForm">
+  <label for="num1">Enter the first number:</label><br>
+  <input type="number" id="num1" name="num1" required><br>
+  <label for="num2">Enter the second number:</label><br>
+  <input type="number" id="num2" name="num2" required><br><br>
+  <button type="submit">Calculate</button>
+</form>
+<div id="result"></div>
+
+
 </body>
+<script>
+  document.getElementById('addForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // prevent form submission
+    var num1 = parseFloat(document.getElementById('num1').value);
+    var num2 = parseFloat(document.getElementById('num2').value);
+    var result = num1 + num2;
+    document.getElementById('result').innerHTML = "Result: " + result;
+  });
+</script>
 </html>
